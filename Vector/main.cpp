@@ -7,9 +7,16 @@
 #include "goal.hpp"
 #include "obstacle.hpp"
 
+#define PI 3.14159265
+
 using namespace std;
 
-void att_fun(float d_x, float d_y, cRobot r, cGoal g){
+float distancia(float x1, float x2, float y1, float y2){
+
+	return sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+}
+
+void att_fun(float &d_x, float &d_y, cRobot r, cGoal g){
 
 	float d;
 	float angle;
@@ -34,14 +41,41 @@ void att_fun(float d_x, float d_y, cRobot r, cGoal g){
 	}
 }
 
+void rep_fun(float &d_x, float &d_y, cRobot r, cObstacle o){
+
+	float d;
+	float angle;
+
+	d = sqrt(pow(o.m_x-r.m_x,2)+pow(o.m_y-r.m_y,2));
+	angle = atan((o.m_y-r.m_y)/(o.m_x-r.m_x));
+	cout << "angle " << angle << endl;
+
+	if(d<o.m_r){
+
+		d_x=cos(angle) > 0 ? -1 : 1;
+		d_y=sin(angle) > 0 ? -1 : 1;
+		d_x*=1000000;
+		d_y*=1000000;
+	}
+	else if(o.m_r<=d && d<=o.m_s+o.m_r){
+
+		d_x=-o.m_beta*(o.m_r+o.m_s-d)*cos(angle);
+		d_y=-o.m_beta*(o.m_r+o.m_s-d)*sin(angle);
+	}
+	else{
+
+		d_x=0;
+		d_y=0;
+	}
+}
 
 int main()
 {
-    cRobot curiosity(10,10);
-	cGoal goal(23,30,2,2,1);
+    cRobot curiosity(40,40);
+	cGoal goal(60,60,2,2,1);
 	vector<cObstacle> obstacles;
 
-	for(int i=0; i<5; ++i){
+	/*for(int i=0; i<5; ++i){
 
 		float auxx=rand()%50;
 		while (auxx==curiosity.m_x || auxx==goal.m_x) auxx=rand()%50;
@@ -49,6 +83,33 @@ int main()
 		while (auxy==curiosity.m_y || auxy==goal.m_y) auxy=rand()%50;
 		cObstacle auxobs(auxx,auxy,2,2,1);
 		obstacles.push_back(auxobs);
+	}*/
+
+	cObstacle auxobs1(50,44,2,2,1);
+	obstacles.push_back(auxobs1);
+	cObstacle auxobs2(54,56,2,2,1);
+	obstacles.push_back(auxobs2);
+	cObstacle auxobs3(45,59,2,2,1);
+	obstacles.push_back(auxobs3);
+
+	float dxt,dyt,dx,dy;
+
+	while(distancia(curiosity.m_x,goal.m_x,curiosity.m_y,goal.m_y)>goal.m_r){
+
+		dx=0; dy=0;
+		att_fun(dxt,dyt,curiosity,goal);
+		cout << "goal " << dxt << " " << dyt << endl;
+		dx+=dxt; dy+=dyt;
+		for(int i=0; i<3; ++i){
+			rep_fun(dxt,dyt,curiosity,obstacles[i]);
+			cout << "obstacle " << dxt << " " << dyt << endl;
+			dx+=dxt; dy+=dyt;
+		}
+		curiosity.m_x+=dx;
+		curiosity.m_y+=dy;
+		cout << curiosity.m_x << " " << curiosity.m_y << endl;
+		int m;
+		cin>>m;
 	}
 
 	return 0;
