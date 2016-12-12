@@ -8,6 +8,7 @@ Integrantes:
 
 Orientadora:
 
+-PhD. Raquel Patiño Escarcina
 -Maria Fernanda Tejada
 
 Setup:
