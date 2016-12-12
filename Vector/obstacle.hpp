@@ -3,11 +3,11 @@ class cObstacle{
 public:
 
 	float m_x, m_y;
-	int m_r,m_s,m_beta;
+  float m_r,m_s,m_beta;
 
 	cObstacle(){};
 
-	cObstacle(float x, float y, int r, int s, int beta){
+	cObstacle(float x, float y, float r, float s, float beta){
 
 		m_x=x;
 		m_y=y;
