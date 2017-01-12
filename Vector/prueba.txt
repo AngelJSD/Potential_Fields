@@ -1,0 +1,426 @@
+cRobot curiosity(7,1);
+cGoal goal(8,20,2,2,1);
+
+cObstacle auxobs1(3,5,1,4,1);
+obstacles.push_back(auxobs1);
+cObstacle auxobs2(3,7,1,4,1);
+obstacles.push_back(auxobs2);
+cObstacle auxobs3(3,9,1,4,1);
+obstacles.push_back(auxobs3);
+cObstacle auxobs4(3,11,1,4,1);
+obstacles.push_back(auxobs4);
+cObstacle auxobs5(5,11,1,4,1);
+obstacles.push_back(auxobs5);
+cObstacle auxobs6(7,11,1,4,1);
+obstacles.push_back(auxobs6);
+cObstacle auxobs7(9,11,1,4,1);
+obstacles.push_back(auxobs7);
+
+goal 0.105118 1.99724
+angle 2.35619
+obstacle 0 0
+angle 2.1588
+obstacle 0 0
+angle 2.03444
+obstacle 0 0
+angle 1.9513
+obstacle 0 0
+angle 1.76819
+obstacle 0 0
+angle 1.5708
+obstacle 0 0
+angle 1.3734
+obstacle 0 0
+7.10512 2.99724
+0
+uno17.026297   otro2.000000goal 0.105118 1.99724
+angle 2.6877
+obstacle 0.388609 -0.189591
+angle 2.36882
+obstacle 0 0
+angle 2.17062
+obstacle 0 0
+angle 2.04476
+obstacle 0 0
+angle 1.82802
+obstacle 0 0
+angle 1.58393
+obstacle 0 0
+angle 1.3383
+obstacle 0 0
+7.59884 4.80488
+0
+uno15.200415   otro2.000000goal 0.0527823 1.9993
+angle 3.09919
+obstacle 0.396661 -0.0168295
+angle 2.69625
+obstacle 0 0
+angle 2.40207
+obstacle 0 0
+angle 2.20937
+obstacle 0 0
+angle 1.968
+obstacle 0 0
+angle 1.66716
+obstacle 0 0
+angle 1.34837
+obstacle 0 0
+8.04829 6.78735
+0
+uno13.212734   otro2.000000goal -0.00730927 1.99999
+angle -2.80131
+obstacle 0 0
+angle 3.0995
+obstacle 0 0
+angle 2.72851
+obstacle 0 0
+angle 2.44618
+obstacle 0 0
+angle 2.19719
+obstacle 0 0
+angle 1.81469
+obstacle 0.159107 -0.639385
+angle 1.34861
+obstacle -0.150109 -0.664443
+8.04998 7.48351
+0
+uno12.516586   otro2.000000goal -0.00798566 1.99998
+angle -2.68454
+obstacle 0 0
+angle -3.04614
+obstacle 0 0
+angle 2.84986
+obstacle 0 0
+angle 2.53333
+obstacle 0 0
+angle 2.28527
+obstacle 0.226121 -0.260707
+angle 1.86096
+obstacle 0.38055 -1.2745
+angle 1.30693
+obstacle -0.354038 -1.31046
+8.29462 6.63782
+0
+uno13.365422   otro2.000000goal -0.0440873 1.99951
+angle -2.84159
+obstacle 0 0
+angle 3.07329
+obstacle 0 0
+angle 2.72195
+obstacle 0 0
+angle 2.45245
+obstacle 0 0
+angle 2.21766
+obstacle 0 0
+angle 1.8593
+obstacle 0.127967 -0.431178
+angle 1.41048
+obstacle -0.0927705 -0.57371
+8.28573 7.63245
+0
+uno12.370851   otro2.000000goal -0.0461943 1.99947
+angle -2.67952
+obstacle 0 0
+angle -3.02251
+obstacle 0 0
+angle 2.88842
+obstacle 0 0
+angle 2.57434
+obstacle 0 0
+angle 2.3439
+obstacle 0.20606 -0.211191
+angle 1.93552
+obstacle 0.497704 -1.30357
+angle 1.36179
+obstacle -0.323169 -1.52364
+8.62013 6.59352
+0
+uno13.420817   otro2.000000goal -0.0924135 1.99786
+angle -2.86531
+obstacle 0 0
+angle 3.06939
+obstacle 0 0
+angle 2.73702
+obstacle 0 0
+angle 2.47665
+obstacle 0 0
+angle 2.25854
+obstacle 0 0
+angle 1.92313
+obstacle 0.105291 -0.286374
+angle 1.4848
+obstacle -0.0495722 -0.575041
+8.58344 7.72997
+0
+uno12.283898   otro2.000000goal -0.0949925 1.99774
+angle -2.68683
+obstacle 0 0
+angle -3.01159
+obstacle 0 0
+angle 2.91793
+obstacle 0 0
+angle 2.61178
+obstacle 0 0
+angle 2.40189
+obstacle 0.109913 -0.1003
+angle 2.02175
+obstacle 0.595664 -1.23013
+angle 1.44409
+obstacle -0.21527 -1.68988
+8.97875 6.70739
+0
+uno13.328593   otro2.000000goal -0.146865 1.9946
+angle -2.86342
+obstacle 0 0
+angle 3.09269
+obstacle 0 0
+angle 2.77543
+obstacle 0 0
+angle 2.5189
+obstacle 0 0
+angle 2.31827
+obstacle 0 0
+angle 2.00273
+obstacle 0.1144 -0.248175
+angle 1.56585
+obstacle -0.00350106 -0.707331
+8.94279 7.74649
+0
+uno12.289729   otro2.000000goal -0.153427 1.99411
+angle -2.70868
+obstacle 0 0
+angle -3.01663
+obstacle 0 0
+angle 2.93371
+obstacle 0 0
+angle 2.64069
+obstacle 0 0
+angle 2.45168
+obstacle 0 0
+angle 2.10911
+obstacle 0.620643 -1.03937
+angle 1.55321
+obstacle -0.0306982 -1.74571
+9.3793 6.95551
+0
+uno13.117208   otro2.000000goal -0.210305 1.98891
+angle -2.84415
+obstacle 0 0
+angle 3.13462
+obstacle 0 0
+angle 2.83145
+obstacle 0 0
+angle 2.57655
+obstacle 0 0
+angle 2.39592
+obstacle 0 0
+angle 2.10256
+obstacle 0.15595 -0.265093
+angle 1.66431
+obstacle 0.0875623 -0.933668
+9.41251 7.74566
+0
+uno12.335474   otro2.000000goal -0.229016 1.98684
+angle -2.73704
+obstacle 0 0
+angle -3.02583
+obstacle 0 0
+angle 2.94842
+obstacle 0 0
+angle 2.67196
+obstacle 0 0
+angle 2.50612
+obstacle 0 0
+angle 2.20872
+obstacle 0.565134 -0.762332
+angle 1.69688
+obstacle 0.216245 -1.70597
+9.96487 7.2642
+0
+uno12.886476   otro2.000000goal -0.304951 1.97661
+angle -2.82728
+obstacle 0 0
+angle -3.10368
+obstacle 0 0
+angle 2.89735
+obstacle 0 0
+angle 2.64927
+obstacle 0 0
+angle 2.49653
+obstacle 0 0
+angle 2.24165
+obstacle 0.143387 -0.18067
+angle 1.82355
+obstacle 0.285485 -1.10534
+10.0888 7.95481
+0
+uno12.224962   otro2.000000goal -0.341726 1.97059
+angle -2.74666
+obstacle 0 0
+angle -3.00771
+obstacle 0 0
+angle 2.9952
+obstacle 0 0
+angle 2.73585
+obstacle 0 0
+angle 2.60234
+obstacle 0 0
+angle 2.3633
+obstacle 0.471781 -0.465121
+angle 1.91418
+obstacle 0.594568 -1.66292
+10.8134 7.79736
+0
+uno12.522770   otro2.000000goal -0.449328 1.94887
+angle -2.79779
+obstacle 0 0
+angle -3.03989
+obstacle 0 0
+angle 2.98887
+obstacle 0 0
+angle 2.75259
+obstacle 0 0
+angle 2.63805
+obstacle 0 0
+angle 2.44303
+obstacle 0.0154176 -0.0129482
+angle 2.08601
+obstacle 0.650193 -1.14829
+11.0297 8.58499
+00
+uno11.810228   otro2.000000goal -0.513064 1.93307
+angle -2.72168
+obstacle 0 0
+angle -2.94671
+obstacle 0 0
+angle 3.08995
+obstacle 0 0
+angle 2.84944
+obstacle 0 0
+angle 2.76064
+obstacle 0 0
+angle 2.60169
+obstacle 0.259084 -0.15527
+angle 2.26972
+obstacle 1.18728 -1.41266
+11.963 8.95013
+0
+uno11.739035   otro2.000000goal -0.675183 1.88259
+angle -2.72649
+obstacle 0 0
+angle -2.92736
+obstacle 0 0
+angle 3.13603
+obstacle 0 0
+angle 2.91676
+obstacle 0 0
+angle 2.85529
+obstacle 0 0
+angle 2.7499
+obstacle 0 0
+angle 2.53638
+obstacle 1.1489 -0.794833
+12.4367 10.0379
+0
+uno10.905419   otro2.000000goal -0.813671 1.827
+angle -2.65123
+obstacle 0 0
+angle -2.83015
+obstacle 0 0
+angle -3.03205
+obstacle 0 0
+angle 3.03999
+obstacle 0 0
+angle 3.01293
+obstacle 0 0
+angle 2.96644
+obstacle 0 0
+angle 2.86863
+obstacle 1.37817 -0.385822
+13.0012 11.4791
+0
+uno9.880203   otro2.000000goal -1.01237 1.72485
+angle -2.56675
+obstacle 0 0
+angle -2.72053
+obstacle 0 0
+angle -2.89861
+obstacle 0 0
+angle -3.09373
+obstacle 0 0
+angle -3.08179
+obstacle 0 0
+angle -3.06193
+obstacle 0 0
+angle -3.02243
+obstacle 0.963334 0.11534
+12.9522 13.3193
+0
+uno8.316031   otro2.000000goal -1.19099 1.60671
+angle -2.44533
+obstacle 0 0
+angle -2.57586
+obstacle 0 0
+angle -2.73212
+obstacle 0 0
+angle -2.91264
+obstacle 0 0
+angle -2.85781
+obstacle 0 0
+angle -2.77004
+obstacle 0 0
+angle -2.61091
+obstacle 0.360143 0.211343
+12.1213 15.1373
+0
+uno6.374247   otro2.000000goal -1.29312 1.52573
+angle -2.30349
+obstacle 0 0
+angle -2.41315
+obstacle 0 0
+angle -2.54932
+obstacle 0 0
+angle -2.71576
+obstacle 0 0
+angle -2.61528
+obstacle 0 0
+angle -2.46208
+obstacle 0 0
+angle -2.21713
+obstacle 0 0
+10.8282 16.663
+0
+uno4.374247   otro2.000000goal -1.29312 1.52573
+angle -2.16193
+obstacle 0 0
+angle -2.25168
+obstacle 0 0
+angle -2.36686
+obstacle 0 0
+angle -2.51532
+obstacle 0 0
+angle -2.37057
+obstacle 0 0
+angle -2.16523
+obstacle 0 0
+angle -1.88307
+obstacle 0 0
+9.53509 18.1888
+0
+uno2.374248   otro2.000000goal -0.241973 0.2855
+angle -2.03084
+obstacle 0 0
+angle -2.09942
+obstacle 0 0
+angle -2.189
+obstacle 0 0
+angle -2.3086
+obstacle 0 0
+angle -2.1336
+obstacle 0 0
+angle -1.90983
+obstacle 0 0
+angle -1.64509
+obstacle 0 0
+9.29312 18.4743
+

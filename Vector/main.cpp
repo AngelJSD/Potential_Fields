@@ -73,26 +73,41 @@ void rep_fun(float &d_x, float &d_y, cRobot r, cObstacle o){
 
 int main()
 {
-    cRobot curiosity(5,5);
-    cGoal goal(60,60,2,2,1);
+    cRobot curiosity(7,1);
+    cGoal goal(7,20,2,2,1);
     vector<cObstacle> obstacles;
 
-    for(int i=0; i<5; ++i){
+    /*for(int i=0; i<5; ++i){
         float auxx=rand()%50;
         while (auxx==curiosity.m_x || auxx==goal.m_x) auxx=rand()%50;
         float auxy=rand()%50;
         while (auxy==curiosity.m_y || auxy==goal.m_y) auxy=rand()%50;
         cObstacle auxobs(auxx,auxy,2,2,1);
         obstacles.push_back(auxobs);
-    }
+    }*/
 
-    /*
-     *cObstacle auxobs1(50,44,2,2,1);
+    /*cObstacle auxobs1(3,5,1,2,1);
     obstacles.push_back(auxobs1);
-    cObstacle auxobs2(54,56,2,2,1);
+    cObstacle auxobs2(3,7,1,2,1);
     obstacles.push_back(auxobs2);
-    cObstacle auxobs3(45,59,2,2,1);
-    obstacles.push_back(auxobs3);*/
+    cObstacle auxobs3(3,9,1,2,1);
+    obstacles.push_back(auxobs3);
+    cObstacle auxobs4(3,11,1,2,1);
+    obstacles.push_back(auxobs4);
+    cObstacle auxobs5(5,11,1,2,1);
+    obstacles.push_back(auxobs5);*/
+    cObstacle auxobs6(7,11,1,2,1);
+    obstacles.push_back(auxobs6);
+    /*cObstacle auxobs7(9,11,1,2,1);
+    obstacles.push_back(auxobs7);
+    cObstacle auxobs8(11,11,1,2,1);
+    obstacles.push_back(auxobs8);
+    cObstacle auxobs9(11,9,1,2,1);
+    obstacles.push_back(auxobs9);
+    cObstacle auxobs10(11,7,1,2,1);
+    obstacles.push_back(auxobs10);
+    cObstacle auxobs11(11,5,1,2,1);
+    obstacles.push_back(auxobs11);*/
 
     float dxt,dyt,dx,dy;
 int m;
@@ -106,7 +121,7 @@ float otro=goal.m_r;
         att_fun(dxt,dyt,curiosity,goal);
         cout << "goal " << dxt << " " << dyt << endl;
         dx+=dxt; dy+=dyt;
-        for(int i=0; i<5; ++i){
+        for(int i=0; i<1; ++i){
             rep_fun(dxt,dyt,curiosity,obstacles[i]);
             cout << "obstacle " << dxt << " " << dyt << endl;
             dx+=dxt; dy+=dyt;
@@ -116,8 +131,8 @@ float otro=goal.m_r;
         cout << curiosity.m_x << " " << curiosity.m_y << endl;
         uno=(float)distancia(curiosity.m_x,goal.m_x,curiosity.m_y,goal.m_y);
         otro=goal.m_r;
-        //int m;
-        //cin>>m;
+        int m;
+        cin>>m;
         printf("uno%f",uno);
         printf("   otro%f",otro);
 
