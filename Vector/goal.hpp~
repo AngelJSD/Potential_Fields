@@ -1,10 +1,8 @@
 class cGoal{
 
 public:
-	
-	//Posicion
-	float m_x, m_y;
 
+	float m_x, m_y;
 	float m_r, m_s, m_alpha;
 
 	cGoal(){};
