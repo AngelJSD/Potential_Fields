@@ -1,0 +1,115 @@
+cRobot curiosity(7,1);
+cGoal goal(25,50,2,2,1);
+
+cObstacle auxobs1(3,5,1,2,1);
+obstacles.push_back(auxobs1);
+cObstacle auxobs2(3,7,1,2,1);
+obstacles.push_back(auxobs2);
+cObstacle auxobs3(3,9,1,2,1);
+obstacles.push_back(auxobs3);
+cObstacle auxobs4(3,11,1,2,1);
+obstacles.push_back(auxobs4);
+cObstacle auxobs5(5,11,1,2,1);
+obstacles.push_back(auxobs5);
+
+goal -0.458079 1.94683
+angle 2.35619
+angle 2.1588
+angle 2.03444
+angle 1.9513
+angle 1.76819
+
+Robot6.54192 2.94683
+uno15.464249   otro2.000000
+goal -0.458079 1.94683
+angle 2.61625
+angle 2.28898
+angle 2.10021
+angle 1.98515
+angle 1.75997
+
+Robot6.08384 4.89367
+uno13.464249   otro2.000000
+goal -0.458079 1.94683
+angle 3.10713
+angle 2.54235
+angle 2.21494
+angle 2.03846
+angle 1.74646
+
+Robot5.62576 6.8405
+uno11.464250   otro2.000000
+goal -0.458079 1.94683
+angle -2.53024
+angle 3.08092
+angle 2.45333
+angle 2.13389
+angle 1.72012
+
+Robot5.5364 8.76494
+uno9.577039   otro2.000000
+goal -0.529684 1.92858
+angle -2.16365
+angle -2.53366
+angle 3.04918
+angle 2.41927
+angle 1.80634
+
+Robot5.62122 9.96964
+uno8.447334   otro2.000000
+goal -0.620602 1.90128
+angle -2.05616
+angle -2.29395
+angle -2.78728
+angle 2.76706
+angle 2.11336
+
+Robot6.29165 10.3361
+uno8.340839   otro2.000000
+goal -0.789284 1.83767
+angle -2.12352
+angle -2.34948
+angle -2.75599
+angle 2.94258
+angle 2.66684
+
+Robot6.87893 11.4663
+uno7.598365   otro2.000000
+goal -1.02099 1.71976
+angle -2.11112
+angle -2.28593
+angle -2.57525
+angle -3.02195
+angle -2.89833
+
+Robot6.89068 13.4424
+uno5.992432   otro2.000000
+goal -1.29853 1.52112
+angle -2.00264
+angle -2.11409
+angle -2.29008
+angle -2.58102
+angle -2.22955
+
+Robot5.59215 14.9635
+uno3.992432   otro2.000000
+goal -1.29362 1.51537
+angle -1.82532
+angle -1.88548
+angle -1.98083
+angle -2.14998
+angle -1.7191
+
+Robot4.29853 16.4789
+uno2.000000   otro2.000000
+angel@angel-B85-HD3:~/Desktop/Vector$ ./demo 
+goal -0.458079 1.94683
+angle 2.35619
+angle 2.1588
+angle 2.03444
+angle 1.9513
+angle 1.76819
+
+Robot6.54192 2.94683
+uno15.464249   otro2.000000
+

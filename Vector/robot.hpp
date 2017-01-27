@@ -12,7 +12,7 @@ public:
 	cRobot(float x, float y){
 		m_x=x;
 		m_y=y;
-		m_max_step=5;
+		m_max_step=2;
 	};
 
 };

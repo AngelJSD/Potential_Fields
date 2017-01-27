@@ -1,8 +1,10 @@
 class cRobot{
 
 public:
-
+	
+	//Posicion
 	float m_x,m_y;
+
 	int m_max_step;
 
 	cRobot(){};

@@ -13,11 +13,13 @@
 
 using namespace std;
 
+//Funcion que calcula la distancia
 float distancia(float x1, float x2, float y1, float y2){
 
     return sqrt(pow(x1-x2,2)+pow(y1-y2,2));
 }
 
+//Funcion de atraccion
 void att_fun(float &d_x, float &d_y, cRobot r, cGoal g){
 
     float d;
@@ -43,6 +45,7 @@ void att_fun(float &d_x, float &d_y, cRobot r, cGoal g){
     }
 }
 
+//Función de repulsion
 void rep_fun(float &d_x, float &d_y, cRobot r, cObstacle o){
 
     float d;
@@ -73,10 +76,16 @@ void rep_fun(float &d_x, float &d_y, cRobot r, cObstacle o){
 
 int main()
 {
+    
+    //Robot
     cRobot curiosity(7,1);
+    //Objetivo
     cGoal goal(7,20,2,2,1);
+    //Vector de obstaculos
     vector<cObstacle> obstacles;
-
+    
+    //Lleno vector obstaculos
+    //Aleatorio
     /*for(int i=0; i<5; ++i){
         float auxx=rand()%50;
         while (auxx==curiosity.m_x || auxx==goal.m_x) auxx=rand()%50;
@@ -85,7 +94,8 @@ int main()
         cObstacle auxobs(auxx,auxy,2,2,1);
         obstacles.push_back(auxobs);
     }*/
-
+    
+    //Por coordenadas especificas
     /*cObstacle auxobs1(3,5,1,2,1);
     obstacles.push_back(auxobs1);
     cObstacle auxobs2(3,7,1,2,1);
@@ -114,20 +124,27 @@ int m;
 float uno=distancia(curiosity.m_x,goal.m_x,curiosity.m_y,goal.m_y);
 float otro=goal.m_r;
     do{
-    //while(m!=0){
         dx=0; dy=0;
 
         //cout<<distancia(curiosity.m_x,goal.m_x,curiosity.m_y,goal.m_y)<<" "<<goal.m_r<<endl;
+	
+	//Calculo funcion de atraccion en dxt y dyt
         att_fun(dxt,dyt,curiosity,goal);
         cout << "goal " << dxt << " " << dyt << endl;
         dx+=dxt; dy+=dyt;
+	
+	//Calculo la repulsion de cada obstaculo
         for(int i=0; i<1; ++i){
             rep_fun(dxt,dyt,curiosity,obstacles[i]);
             cout << "obstacle " << dxt << " " << dyt << endl;
+	    //Actualizo dx y dy
             dx+=dxt; dy+=dyt;
         }
+	
+	//Muevo el robot
         curiosity.m_x+=dx;
         curiosity.m_y+=dy;
+
         cout << curiosity.m_x << " " << curiosity.m_y << endl;
         uno=(float)distancia(curiosity.m_x,goal.m_x,curiosity.m_y,goal.m_y);
         otro=goal.m_r;
@@ -137,6 +154,7 @@ float otro=goal.m_r;
         printf("   otro%f",otro);
 
     }
+    //Mientras no llegue al goal
     while(uno-otro>0.000009);
 
     return 0;

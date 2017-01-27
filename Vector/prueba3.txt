@@ -1,0 +1,480 @@
+cRobot curiosity(7,1);
+cGoal goal(25,50,2,2,1);
+
+goal 0.689635 1.87734
+angle 1.38545
+angle 0.128323
+angle 0.390607
+angle 1.98321
+angle 2.0032
+angle 0.426628
+angle 1.48766
+angle 1.22203
+angle 1.1659
+angle 1.13417
+
+Robot7.68963 2.87734
+uno50.201534   otro2.000000
+goal 0.689635 1.87734
+angle 1.3963
+angle 0.0699167
+angle 0.304318
+angle 2.0694
+angle 2.11228
+angle 0.36416
+angle 1.54015
+angle 1.22233
+angle 1.16298
+angle 1.13062
+
+Robot8.37927 4.75468
+uno48.201534   otro2.000000
+goal 0.689635 1.87734
+angle 1.40864
+angle 0.00828189
+angle 0.204843
+angle 2.1709
+angle 2.24442
+angle 0.294084
+angle 1.61676
+angle 1.2227
+angle 1.15971
+angle 1.12677
+
+Robot9.0689 6.63202
+uno46.201530   otro2.000000
+goal 0.689635 1.87734
+angle 1.4228
+angle -0.0563508
+angle 0.0913646
+angle 2.28946
+angle 2.40157
+angle 0.215743
+angle 1.7371
+angle 1.22315
+angle 1.15603
+angle 1.12257
+
+Robot9.75854 8.50936
+uno44.201534   otro2.000000
+goal 0.689635 1.87734
+angle 1.43921
+angle -0.123629
+angle -0.0357506
+angle 2.42556
+angle 2.58164
+angle 0.128726
+angle 1.94404
+angle 1.22372
+angle 1.15186
+angle 1.11796
+
+Robot10.4482 10.3867
+uno42.201534   otro2.000000
+goal 0.689635 1.87734
+angle 1.45843
+angle -0.193076
+angle -0.174329
+angle 2.57729
+angle 2.77632
+angle 0.0330469
+angle 2.32358
+angle 1.22447
+angle 1.1471
+angle 1.11289
+
+Robot11.4243 11.9582
+uno40.391560   otro2.000000
+goal 0.672203 1.88365
+angle 1.49605
+angle -0.256077
+angle -0.304933
+angle 2.72598
+angle 2.94817
+angle -0.0544641
+angle 2.84625
+angle 1.25762
+angle 1.15638
+angle 1.11767
+
+Robot12.499 13.7194
+uno38.373913   otro2.000000
+goal 0.651536 1.8909
+angle 1.54482
+angle -0.329462
+angle -0.461482
+angle 2.88491
+angle 3.11719
+angle -0.163334
+angle -2.98304
+angle 1.30756
+angle 1.16772
+angle 1.12312
+
+Robot13.1506 15.6103
+uno36.373913   otro2.000000
+goal 0.651536 1.8909
+angle 1.57945
+angle -0.403549
+angle -0.611695
+angle 3.03631
+angle -3.00983
+angle -0.283069
+angle -2.67252
+angle 1.32556
+angle 1.16131
+angle 1.11628
+
+Robot13.8021 17.5012
+uno34.373913   otro2.000000
+goal 0.651536 1.8909
+angle 1.6225
+angle -0.476857
+angle -0.750045
+angle -3.1053
+angle -2.87463
+angle -0.404213
+angle -2.48179
+angle 1.3563
+angle 1.15365
+angle 1.1086
+
+Robot14.4536 19.3921
+uno32.373913   otro2.000000
+goal 0.651536 1.8909
+angle 1.67721
+angle -0.548631
+angle -0.87332
+angle -2.97758
+angle -2.7604
+angle -0.523276
+angle -2.36098
+angle 1.4205
+angle 1.1443
+angle 1.09989
+
+Robot15.0526 20.936
+uno30.719164   otro2.000000
+goal 0.647634 1.89224
+angle 1.73933
+angle -0.606997
+angle -0.965685
+angle -2.88584
+angle -2.6831
+angle -0.618994
+angle -2.29733
+angle 1.59628
+angle 1.13867
+angle 1.09398
+
+Robot15.7496 20.8935
+uno30.541069   otro2.000000
+goal 0.605771 1.90605
+angle 1.79412
+angle -0.62026
+angle -1.00156
+angle -2.89924
+angle -2.70439
+angle -0.641358
+angle -2.34699
+angle 1.91266
+angle 1.17848
+angle 1.11684
+
+Robot16.9468 21.1375
+uno29.964930   otro2.000000
+goal 0.537512 1.92642
+angle 1.89198
+angle -0.653984
+angle -1.07808
+angle -2.90213
+angle -2.72075
+angle -0.699282
+angle -2.40353
+angle 2.37832
+angle 1.24306
+angle 1.15246
+
+Robot18.4278 22.1612
+uno28.604019   otro2.000000
+goal 0.459529 1.94649
+angle 2.03507
+angle -0.719859
+angle -1.19592
+angle -2.86851
+angle -2.70363
+angle -0.812495
+angle -2.42076
+angle 2.90162
+angle 1.31818
+angle 1.18896
+
+Robot19.3449 23.9958
+uno26.612024   otro2.000000
+goal 0.425003 1.95432
+angle 2.18464
+angle -0.794446
+angle -1.2876
+angle -2.79459
+angle -2.64269
+angle -0.931828
+angle -2.37182
+angle -2.9163
+angle 1.35312
+angle 1.19605
+
+Robot19.7699 25.9501
+uno24.612024   otro2.000000
+goal 0.425003 1.95432
+angle 2.33594
+angle -0.85471
+angle -1.33936
+angle -2.71648
+angle -2.57465
+angle -1.01769
+angle -2.30849
+angle -2.5877
+angle 1.35243
+angle 1.18129
+
+Robot20.1949 27.9044
+uno22.612024   otro2.000000
+goal 0.425003 1.95432
+angle 2.52537
+angle -0.91001
+angle -1.38191
+angle -2.64649
+angle -2.51469
+angle -1.09059
+angle -2.25654
+angle -2.38495
+angle 1.35141
+angle 1.16358
+
+Robot20.6199 29.8587
+uno20.612026   otro2.000000
+goal 0.425003 1.95432
+angle 2.75058
+angle -0.960638
+angle -1.41738
+angle -2.584
+angle -2.46181
+angle -1.15264
+angle -2.21338
+angle -2.25724
+angle 1.34974
+angle 1.14196
+
+Robot21.0449 31.8131
+uno18.612026   otro2.000000
+goal 0.425003 1.95432
+angle 2.99511
+angle -1.00693
+angle -1.44733
+angle -2.52827
+angle -2.41508
+angle -1.20571
+angle -2.17708
+angle -2.172
+angle 1.34652
+angle 1.11498
+
+Robot21.4699 33.7674
+uno16.612026   otro2.000000
+goal 0.425003 1.95432
+angle -3.05124
+angle -1.04925
+angle -1.47292
+angle -2.47856
+angle -2.37365
+angle -1.25138
+angle -2.14619
+angle -2.11186
+angle 1.33769
+angle 1.08046
+
+Robot21.501 34.0625
+uno16.317066   otro2.000000
+goal 0.428878 1.95347
+angle -3.01725
+angle -1.05446
+angle -1.4752
+angle -2.47079
+angle -2.367
+angle -1.25642
+angle -2.14082
+angle -2.10209
+angle 1.31872
+angle 1.07225
+
+Robot21.4312 34.0799
+uno16.315210   otro2.000000
+goal 0.43748 1.95157
+angle -3.0142
+angle -1.0529
+angle -1.47262
+angle -2.46871
+angle -2.36487
+angle -1.25391
+angle -2.13809
+angle -2.09671
+angle 1.2828
+angle 1.06713
+
+Robot21.3014 34.1163
+uno16.308640   otro2.000000
+goal 0.453579 1.94789
+angle -3.00792
+angle -1.05008
+angle -1.46783
+angle -2.4647
+angle -2.36077
+angle -1.24931
+angle -2.13292
+angle -2.08649
+angle 1.21564
+angle 1.05751
+
+Robot21.0626 34.1975
+uno16.285616   otro2.000000
+goal 0.483539 1.94067
+angle -2.99414
+angle -1.04514
+angle -1.45914
+angle -2.45687
+angle -2.35284
+angle -1.24112
+angle -2.12307
+angle -2.06703
+angle 1.09124
+angle 1.0394
+
+Robot20.638 34.3919
+uno16.206200   otro2.000000
+goal 0.538311 1.92619
+angle -2.96134
+angle -1.03724
+angle -1.44409
+angle -2.44135
+angle -2.33736
+angle -1.22748
+angle -2.10441
+angle -2.03037
+angle 0.868085
+angle 1.0056
+
+Robot19.9532 34.8738
+uno15.945906   otro2.000000
+goal 0.632996 1.89719
+angle -2.87835
+angle -1.02737
+angle -1.42133
+angle -2.41111
+angle -2.30801
+angle -1.20857
+angle -2.07092
+angle -1.966
+angle 0.502999
+angle 0.944646
+
+Robot19.1284 35.969
+uno15.210036   otro2.000000
+goal 0.772065 1.84497
+angle -2.69046
+angle -1.02352
+angle -1.39835
+angle -2.36038
+angle -2.26071
+angle -1.1943
+angle -2.02197
+angle -1.87899
+angle 0.0108064
+angle 0.84666
+
+Robot18.7723 37.8017
+uno13.696045   otro2.000000
+goal 0.909416 1.78128
+angle -2.44772
+angle -1.0406
+angle -1.39715
+angle -2.30496
+angle -2.21217
+angle -1.20625
+angle -1.98055
+angle -1.82034
+angle -0.509127
+angle 0.726391
+
+Robot19.4167 39.7309
+uno11.688730   otro2.000000
+goal 0.955325 1.75709
+angle -2.3323
+angle -1.07949
+angle -1.42735
+angle -2.27772
+angle -2.19201
+angle -1.24885
+angle -1.97444
+angle -1.82889
+angle -0.965196
+angle 0.630827
+
+Robot20.3721 41.488
+uno9.688729   otro2.000000
+goal 0.955325 1.75709
+angle -2.28595
+angle -1.12075
+angle -1.46288
+angle -2.2647
+angle -2.1847
+angle -1.29501
+angle -1.98051
+angle -1.85358
+angle -1.28243
+angle 0.53415
+
+Robot21.3274 43.2451
+uno7.688729   otro2.000000
+goal 0.955325 1.75709
+angle -2.2533
+angle -1.1597
+angle -1.49511
+angle -2.25319
+angle -2.17821
+angle -1.33719
+angle -1.98584
+angle -1.87372
+angle -1.47822
+angle 0.391547
+
+Robot22.2827 45.0022
+uno5.688729   otro2.000000
+goal 0.955325 1.75709
+angle -2.22912
+angle -1.19642
+angle -1.52442
+angle -2.24294
+angle -2.1724
+angle -1.37575
+angle -1.99057
+angle -1.89044
+angle -1.60219
+angle 0.172782
+
+Robot23.238 46.7593
+uno3.688728   otro2.000000
+goal 0.806642 1.48362
+angle -2.2105
+angle -1.23101
+angle -1.55114
+angle -2.23376
+angle -2.16717
+angle -1.41104
+angle -1.99479
+angle -1.90455
+angle -1.68536
+angle -0.158118
+
+Robot24.0447 48.2429
+uno2.000000   otro2.000000
+
