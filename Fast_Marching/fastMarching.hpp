@@ -2,6 +2,8 @@
 #define FASTMARCHING_H
 
 #include <iostream>
+#include <math.h>
+#include <algorithm>
 
 #include "grilla_FM.hpp"
 
@@ -13,7 +15,8 @@ class cFastMarching {
 		cGrid m_grid;
 		vector<cCell> mNarrowBand;
 
-		cFastMarching (cGrid, int, int);
+		cFastMarching ();
+		cFastMarching (int, int, int, int);
 		float solveEikonal(cCell);
 		//void init();
 		void FM(int, int);

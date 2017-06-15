@@ -1,4 +1,8 @@
+#ifndef GRILLA_FM_H
+#define GRILLA_FM_H
+
 #include <stdio.h>
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -17,6 +21,7 @@ class cGrid {
 	public:
 		vector< vector<cCell> > grid;
 		int h, w;
+		cGrid (){};
 		cGrid (int h, int w){
 
 			this->h = h;
@@ -70,3 +75,5 @@ class cGrid {
 			}
 		}
 };
+
+#endif
