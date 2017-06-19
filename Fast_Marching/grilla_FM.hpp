@@ -13,7 +13,7 @@ struct cCell {
 	float t;
 	int i,j;
 	string state;
-	vector <cCell> neightbours;
+	vector <cCell*> neightbours;
 };
 
 class cGrid {
@@ -48,20 +48,20 @@ class cGrid {
 
 			for (int i = 0; i < h; i++) {
 				for (int j = 0; j < w; j++) {
-					fillNeightbours(grid[i][j]);
+					fillNeightbours(&grid[i][j]);
 				}
 			}
 		}
 
-		void fillNeightbours (cCell c){
+		void fillNeightbours (cCell *c){
 
-			if(c.i-1>=0) c.neightbours.push_back(grid[c.i-1][c.j]);
+			if(c->i-1>=0) c->neightbours.push_back(&grid[c->i-1][c->j]);
 
-			if(c.i+1<h) c.neightbours.push_back(grid[c.i+1][c.j]);
+			if(c->i+1<h) c->neightbours.push_back(&grid[c->i+1][c->j]);
 
-			if(c.j-1>=0) c.neightbours.push_back(grid[c.i][c.j-1]);
+			if(c->j-1>=0) c->neightbours.push_back(&grid[c->i][c->j-1]);
 
-			if(c.j+1<w) c.neightbours.push_back(grid[c.i][c.j+1]);
+			if(c->j+1<w) c->neightbours.push_back(&grid[c->i][c->j+1]);
 
 		}
 

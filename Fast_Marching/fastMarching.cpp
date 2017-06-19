@@ -32,13 +32,13 @@ float cFastMarching::solveEikonal(cCell c){
 	else t2=myMin(m_grid.grid[c.i][c.j+1].t,m_grid.grid[c.i][c.j-1].t);
 
 	if(abs(t1-t2)<1/c.vel){
-		T = t1+t2 + pow((2/c.vel-pow((t1-t2),2)),0.5);
+		T = (t1+t2 + pow((2/c.vel-pow((t1-t2),2)),0.5))/2;
 	}
 	else{
 		T = min(t1,t2);
 	}
 
-	cout<<"T: "<<endl;
+	//cout<<"T: "<<T<<endl;
 	return T;
 }
 
@@ -51,7 +51,7 @@ void cFastMarching::FM(int ini_i, int ini_j){
 	//chequear aqui!!
 	for(int i=0; i<m_grid.grid[ini_i][ini_j].neightbours.size(); ++i){
 
-		cCell *n = &m_grid.grid[ini_i][ini_j].neightbours[i];
+		cCell *n = m_grid.grid[ini_i][ini_j].neightbours[i];
 		cout<<"state: "<<n->state<<endl;
 		if( n->state!="FROZEN" ){
 			n->t = solveEikonal(*n);
@@ -68,7 +68,7 @@ void cFastMarching::FM(int ini_i, int ini_j){
 		mNarrowBand.erase(mNarrowBand.begin());
 		for(int i=0; i<actual.neightbours.size(); ++i){
 
-			cCell *n = &actual.neightbours[i];
+			cCell *n = actual.neightbours[i];
 			if( n->state!="FROZEN" ){
 				n->t = solveEikonal(*n);
 				if(n->state == "UNKNOWN"){

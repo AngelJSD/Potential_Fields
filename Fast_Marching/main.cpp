@@ -8,7 +8,7 @@ using namespace std;
 int main (){
 
 	cGrid grid(5,5);
-	cFastMarching fastMarching(5, 5, 2, 2); //cambiar grid por w,h o constructor vacio
+	cFastMarching fastMarching(10, 10, 2, 2); //cambiar grid por w,h o constructor vacio
 	//fastMarching = cFastMarching(grid, 2, 2);
 	fastMarching.m_grid.print();
 
