@@ -35,7 +35,7 @@ float cFastMarching::solveEikonal(cCell c){
 		T = (t1+t2 + pow((2/c.vel-pow((t1-t2),2)),0.5))/2;
 	}
 	else{
-		T = min(t1,t2);
+		T = min(t1,t2) + 1/c.vel;
 	}
 
 	//cout<<"T: "<<T<<endl;
@@ -65,6 +65,7 @@ void cFastMarching::FM(int ini_i, int ini_j){
 	while(!mNarrowBand.empty()){
 
 		cCell actual = mNarrowBand[0];
+		visited.push_back(actual);
 		mNarrowBand.erase(mNarrowBand.begin());
 		for(int i=0; i<actual.neightbours.size(); ++i){
 
@@ -79,4 +80,27 @@ void cFastMarching::FM(int ini_i, int ini_j){
 			}
 		}
 	}
+}
+
+void cFastMarching::genPath(int x, int y){
+
+	cCell actual = m_grid.grid[x][y];
+
+	while(actual.t!=0){
+
+		vector<cCell> n;
+		if(actual.i+1<m_grid.h)
+			n.push_back(m_grid.grid[actual.i+1][actual.j]);
+		if(actual.i-1>=0)
+			n.push_back(m_grid.grid[actual.i-1][actual.j]);
+		if(actual.j+1<m_grid.w)
+			n.push_back(m_grid.grid[actual.i][actual.j+1]);
+		if(actual.j-1>=0)
+			n.push_back(m_grid.grid[actual.i][actual.j-1]);
+		sort(n.begin(), n.end(), myfunction);
+		actual=n[0];
+		path.push_back(actual);
+		cout<<"("<<actual.i<<","<<actual.j<<"), ";
+	}
+
 }

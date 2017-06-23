@@ -69,7 +69,7 @@ class cGrid {
 
 			for (int i = 0; i < h; i++) {
 				for (int j = 0; j < w; j++) {
-					printf("(%.1f,%.2f)", grid[i][j].vel, grid[i][j].t);
+					printf("(%.1f,%.4f)", grid[i][j].vel, grid[i][j].t);
 				}
 				printf("\n");
 			}
