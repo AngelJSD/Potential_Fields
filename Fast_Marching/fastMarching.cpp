@@ -1,6 +1,7 @@
 #include "fastMarching.hpp"
 
 bool myfunction (cCell i,cCell j) { return (i.t<j.t); }
+bool myfunction1 (cCell* i,cCell* j) { return (i->t<j->t); }
 float myMin(float a, float b){
 
 	if(a<b) return a;
@@ -9,10 +10,10 @@ float myMin(float a, float b){
 
 cFastMarching::cFastMarching (){};
 
-cFastMarching::cFastMarching (int w, int h, int ini_i, int ini_j){
+cFastMarching::cFastMarching (int w, int h){
 
 	m_grid = cGrid (w,h);
-	FM(ini_i, ini_j);
+	//FM(ini_i, ini_j);
 }
 
 float cFastMarching::solveEikonal(cCell c){
@@ -44,6 +45,9 @@ float cFastMarching::solveEikonal(cCell c){
 
 void cFastMarching::FM(int ini_i, int ini_j){
 
+	mNarrowBand.clear();
+	visited.clear();
+	
 	m_grid.grid[ini_i][ini_j].t = 0;
 	m_grid.grid[ini_i][ini_j].state = "FROZEN";
 
@@ -53,7 +57,7 @@ void cFastMarching::FM(int ini_i, int ini_j){
 
 		cCell *n = m_grid.grid[ini_i][ini_j].neightbours[i];
 		cout<<"state: "<<n->state<<endl;
-		if( n->state!="FROZEN" ){
+		if( n->state!="FROZEN" && !n->obstacle){
 			n->t = solveEikonal(*n);
 			if(n->state == "UNKNOWN"){
 				n->state = "NARROW BAND";
@@ -70,7 +74,7 @@ void cFastMarching::FM(int ini_i, int ini_j){
 		for(int i=0; i<actual.neightbours.size(); ++i){
 
 			cCell *n = actual.neightbours[i];
-			if( n->state!="FROZEN" ){
+			if( n->state!="FROZEN" && !n->obstacle){
 				n->t = solveEikonal(*n);
 				if(n->state == "UNKNOWN"){
 					n->state = "NARROW BAND";
@@ -84,23 +88,26 @@ void cFastMarching::FM(int ini_i, int ini_j){
 
 void cFastMarching::genPath(int x, int y){
 
-	cCell actual = m_grid.grid[x][y];
+	path.clear();
+	cCell *actual = &m_grid.grid[x][y];
+	
 
-	while(actual.t!=0){
+	while(actual->t!=0){
 
-		vector<cCell> n;
-		if(actual.i+1<m_grid.h)
-			n.push_back(m_grid.grid[actual.i+1][actual.j]);
-		if(actual.i-1>=0)
-			n.push_back(m_grid.grid[actual.i-1][actual.j]);
-		if(actual.j+1<m_grid.w)
-			n.push_back(m_grid.grid[actual.i][actual.j+1]);
-		if(actual.j-1>=0)
-			n.push_back(m_grid.grid[actual.i][actual.j-1]);
-		sort(n.begin(), n.end(), myfunction);
+		cout<<"entro "<<actual->t<<endl;
+		vector<cCell*> n;
+		if(actual->i+1<m_grid.h)
+			n.push_back(&m_grid.grid[actual->i+1][actual->j]);
+		if(actual->i-1>=0)
+			n.push_back(&m_grid.grid[actual->i-1][actual->j]);
+		if(actual->j+1<m_grid.w)
+			n.push_back(&m_grid.grid[actual->i][actual->j+1]);
+		if(actual->j-1>=0)
+			n.push_back(&m_grid.grid[actual->i][actual->j-1]);
+		sort(n.begin(), n.end(), myfunction1);
 		actual=n[0];
 		path.push_back(actual);
-		cout<<"("<<actual.i<<","<<actual.j<<"), ";
+		cout<<"("<<actual->i<<","<<actual->j<<"), ";
 	}
 
 }

@@ -14,10 +14,10 @@ class cFastMarching {
 	public:
 		cGrid m_grid;
 		
-		vector<cCell> mNarrowBand, visited, path;
-
+		vector<cCell> mNarrowBand, visited;
+		vector<cCell*> path;
 		cFastMarching ();
-		cFastMarching (int, int, int, int);
+		cFastMarching (int, int);
 		float solveEikonal(cCell);
 		//void init();
 		void FM(int, int);

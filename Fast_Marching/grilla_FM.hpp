@@ -14,6 +14,7 @@ struct cCell {
 	int i,j;
 	string state;
 	vector <cCell*> neightbours;
+	bool obstacle = false;
 };
 
 class cGrid {
@@ -48,13 +49,21 @@ class cGrid {
 
 			for (int i = 0; i < h; i++) {
 				for (int j = 0; j < w; j++) {
-					fillNeightbours(&grid[i][j]);
+					if (!grid[i][j].obstacle) 
+						fillNeightbours(&grid[i][j]);
 				}
-			}
+			}	
+		}
+
+		void setObstacle(int i, int j){
+
+			grid[i][j].obstacle=true;
 		}
 
 		void fillNeightbours (cCell *c){
 
+			c->neightbours.clear();
+			
 			if(c->i-1>=0) c->neightbours.push_back(&grid[c->i-1][c->j]);
 
 			if(c->i+1<h) c->neightbours.push_back(&grid[c->i+1][c->j]);
