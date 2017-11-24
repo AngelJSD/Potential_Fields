@@ -8,8 +8,8 @@
 #include "grilla_D_star_lite.hpp"
 #include "dStarLite.hpp"
 
-#define COLUMNS 10
-#define ROWS 10
+#define COLUMNS 30
+#define ROWS 30
 #define FPS 60
 
 using namespace std;

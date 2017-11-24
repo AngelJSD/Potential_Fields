@@ -77,6 +77,14 @@ class cGrid {
 
 			if(c->j+1<w) c->neightbours.push_back(&grid[c->i][c->j+1]);
 
+			if(c->i-1>0 && c->j+1<w) c->neightbours.push_back(&grid[c->i-1][c->j+1]);
+
+			if(c->i-1>0 && c->j-1>=0) c->neightbours.push_back(&grid[c->i-1][c->j-1]);
+
+			if(c->i+1<h && c->j+1<w) c->neightbours.push_back(&grid[c->i+1][c->j+1]);
+
+			if(c->i+1<h && c->j-1>=0) c->neightbours.push_back(&grid[c->i+1][c->j-1]);
+
 		}
 
 		void reset(){
