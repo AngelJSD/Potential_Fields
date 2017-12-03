@@ -1,0 +1,33 @@
+#ifndef FASTMARCHING_H
+#define FASTMARCHING_H
+
+#include <iostream>
+#include <math.h>
+#include <algorithm>
+
+#include "grilla_FM.hpp"
+//#include "../A_star/grilla_A_star.hpp"
+
+using namespace std;
+
+class cFastMarching {
+
+	public:
+		cGrid m_grid;
+		
+		vector<cCell> mNarrowBand, visited;
+		vector<cCell*> path, visited1;
+		cFastMarching ();
+		cFastMarching (int, int);
+		float solveEikonal(cCell);
+		//void init();
+		bool FM(int, int, int, int, int);
+		bool setObstacle(int, int, int);
+		void genPath(int, int);
+		static bool myfunction (cCell i,cCell j);
+		static bool myfunction1 (cCell* i,cCell* j);
+		float myMin(float a, float b);
+
+};
+
+#endif
