@@ -47,6 +47,7 @@ float cFastMarching::solveEikonal(cCell c){
 
 bool cFastMarching::setObstacle(int ini_i, int ini_j, int radio){
 
+	visited1.clear();
 	FM(ini_i, ini_j, ini_i+radio, ini_j+radio, radio);
 	for(int i=0; i<visited1.size(); ++i){
 		if(visited1[i]->t<100000) visited1[i]->vel=visited1[i]->t;
@@ -54,6 +55,12 @@ bool cFastMarching::setObstacle(int ini_i, int ini_j, int radio){
 		visited1[i]->state="UNKNOWN";
 		cout<<visited1[i]->i<<","<<visited1[i]->j<<endl;
 	}
+	for(int i=(int)visited1.size()-1; i>=0; --i){
+		
+		visited1[i]->t=solveEikonal(*visited1[i]);
+	}
+	m_grid.print();
+	
 }
 
 bool cFastMarching::FM(int ini_i, int ini_j, int fin_i, int fin_j, int radio){
@@ -65,18 +72,19 @@ bool cFastMarching::FM(int ini_i, int ini_j, int fin_i, int fin_j, int radio){
 	cout<<"VIVO"<<endl;
 	
 	m_grid.grid[ini_i][ini_j].t = 0;
+	if(radio>0) m_grid.grid[ini_i][ini_j].t = 1;
 	visited1.push_back(&m_grid.grid[ini_i][ini_j]);
 	m_grid.grid[ini_i][ini_j].state = "FROZEN";
 
 	
 	//chequear aqui!!
-	cout<<m_grid.grid[ini_i][ini_j].neightbours.size()<<endl;
+	//cout<<m_grid.grid[ini_i][ini_j].neightbours.size()<<endl;
 	for(int i=0; i<m_grid.grid[ini_i][ini_j].neightbours.size(); ++i){
 
 		cCell *n = m_grid.grid[ini_i][ini_j].neightbours[i];
 		visited1.push_back(m_grid.grid[ini_i][ini_j].neightbours[i]);
-		cout<<n->i<<","<<n->j<<endl;
-		cout<<"state: "<<n->state<<endl;
+		//cout<<n->i<<","<<n->j<<endl;
+		//cout<<"state: "<<n->state<<endl;
 		if( n->state!="FROZEN" && !n->obstacle){
 			n->t = solveEikonal(*n);
 			if(n->state == "UNKNOWN"){
@@ -91,7 +99,7 @@ bool cFastMarching::FM(int ini_i, int ini_j, int fin_i, int fin_j, int radio){
 		cCell actual = mNarrowBand[0];
 		visited.push_back(actual);
 		
-		cout<<"Cell nro: "<<visited.size()<<endl;
+		//cout<<"Cell nro: "<<visited.size()<<endl;
 		mNarrowBand.erase(mNarrowBand.begin());
 		//clock_t begin = clock();
 		for(int i=0; i<actual.neightbours.size(); ++i){
@@ -121,27 +129,27 @@ void cFastMarching::genPath(int x, int y){
 	path.clear();
 	cCell *actual = &m_grid.grid[x][y];
 	
-
+	path.push_back(actual);
 	while(actual->t!=0){
 
 		//cout<<"entro "<<actual->t<<endl;
 		vector<cCell*> n;
 		if(actual->i+1<m_grid.h)
-			n.push_back(&m_grid.grid[actual->i+1][actual->j]);
+			if(!m_grid.grid[actual->i+1][actual->j].obstacle) n.push_back(&m_grid.grid[actual->i+1][actual->j]);
 		if(actual->i-1>=0)
-			n.push_back(&m_grid.grid[actual->i-1][actual->j]);
+			if(!m_grid.grid[actual->i-1][actual->j].obstacle) n.push_back(&m_grid.grid[actual->i-1][actual->j]);
 		if(actual->j+1<m_grid.w)
-			n.push_back(&m_grid.grid[actual->i][actual->j+1]);
+			if(!m_grid.grid[actual->i][actual->j+1].obstacle) n.push_back(&m_grid.grid[actual->i][actual->j+1]);
 		if(actual->j-1>=0)
-			n.push_back(&m_grid.grid[actual->i][actual->j-1]);
+			if(!m_grid.grid[actual->i][actual->j-1].obstacle) n.push_back(&m_grid.grid[actual->i][actual->j-1]);
 		if(actual->i+1<m_grid.h && actual->j+1<m_grid.w)
-			n.push_back(&m_grid.grid[actual->i+1][actual->j+1]);
+			if(!m_grid.grid[actual->i+1][actual->j+1].obstacle) n.push_back(&m_grid.grid[actual->i+1][actual->j+1]);
 		if(actual->i+1<m_grid.h && actual->j-1>=0)
-			n.push_back(&m_grid.grid[actual->i+1][actual->j-1]);
+			if(!m_grid.grid[actual->i+1][actual->j-1].obstacle) n.push_back(&m_grid.grid[actual->i+1][actual->j-1]);
 		if(actual->i-1>=0 && actual->j-1>=0)
-			n.push_back(&m_grid.grid[actual->i-1][actual->j-1]);
+			if(!m_grid.grid[actual->i-1][actual->j-1].obstacle) n.push_back(&m_grid.grid[actual->i-1][actual->j-1]);
 		if(actual->i-1>=0 && actual->j+1<m_grid.w)
-			n.push_back(&m_grid.grid[actual->i-1][actual->j+1]);
+			if(!m_grid.grid[actual->i-1][actual->j+1].obstacle) n.push_back(&m_grid.grid[actual->i-1][actual->j+1]);
 		sort(n.begin(), n.end(), myfunction1);
 		actual=n[0];
 		path.push_back(actual);

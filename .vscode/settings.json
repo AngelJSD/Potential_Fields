@@ -3,6 +3,8 @@
         "*.tcc": "cpp",
         "iostream": "cpp",
         "array": "cpp",
-        "initializer_list": "cpp"
+        "initializer_list": "cpp",
+        "ostream": "cpp",
+        "utility": "cpp"
     }
 }

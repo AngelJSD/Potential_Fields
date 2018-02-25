@@ -55,6 +55,16 @@ class cGrid {
 			}	
 		}
 
+		void reset(){
+
+			for (int i = 0; i < h; i++) {
+				for (int j = 0; j < w; j++) {
+					grid[i][j].t = 100000;
+					grid[i][j].state = "UNKNOWN";
+				}
+			}
+		}
+
 		void setObstacle(int i, int j){
 
 			grid[i][j].obstacle=true;

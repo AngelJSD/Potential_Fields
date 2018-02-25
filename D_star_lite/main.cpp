@@ -8,8 +8,8 @@
 #include "grilla_D_star_lite.hpp"
 #include "dStarLite.hpp"
 
-#define COLUMNS 10
-#define ROWS 10
+#define COLUMNS 40
+#define ROWS 40
 #define FPS 60
 
 using namespace std;
@@ -76,11 +76,11 @@ void display_callback(){
     int x,y;
     glClear(GL_COLOR_BUFFER_BIT);
     drawGrid();
-    if(it<visited.size()){
+    /*if(it<visited.size()){
 		 fillCell(visited[it].i,visited[it].j);
 		 ++it;
 	}
-	else{
+	else{*/
         //cout<<dStarLite.path.size()<<endl;
 		for(int i=0; i<dStarLite.path.size(); ++i){
 			//cout<<dStarLite.path.size()<<" "<<i<<endl;
@@ -94,10 +94,30 @@ void display_callback(){
                 //path = fastMarching.path;
                 break;
             }
-            else
-                fillCell(dStarLite.path[i]->i,dStarLite.path[i]->j);
+            else{
+                //fillCell(dStarLite.path[i]->i,dStarLite.path[i]->j);
+                GLfloat point[2];
+                glPointSize(5.0);
+                glLineWidth(2.5);
+                glColor3f(1.0, 1.0, 0.0);
+
+                glBegin(GL_POINTS);
+                    for (int i = 0; i < dStarLite.path.size(); i++){ 
+                        point[0]=dStarLite.path[i]->j+0.5;
+                        point[1]=(COLUMNS-1)-dStarLite.path[i]->i+0.5;
+                        glVertex2fv(&point[0]);
+                    }
+                glEnd();
+                glBegin(GL_LINE_STRIP);
+                    for (int i = 0; i < dStarLite.path.size(); i++){ 
+                        point[0]=dStarLite.path[i]->j+0.5;
+                        point[1]=(COLUMNS-1)-dStarLite.path[i]->i+0.5;
+                        glVertex2fv(&point[0]);
+                    }
+                glEnd();
+            }
 		}
-	}
+	//}
     
     //fillCell(x,y);
     //cout<<"here"<<endl;

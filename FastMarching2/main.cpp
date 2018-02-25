@@ -86,16 +86,40 @@ void display_callback(){
 			//cout<<fastMarching.path.size()<<" "<<i<<endl;
             if(fastMarching.path[i]->obstacle){
                 cout<<"KHA"<<endl;
-                fastMarching.m_grid.init();
-                pathFound = fastMarching.FM(goalx, goaly, inix, iniy, 0);
-                fastMarching.m_grid.print();
+                fastMarching.m_grid.reset();
+                clock_t begin = clock();
+                pathFound = fastMarching.FM(goalx,goaly, inix, iniy, 0);
+                clock_t end = clock();
+                double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+                cout<<"Time: "<<elapsed_secs<<endl<<endl;
+                //fastMarching.m_grid.print();
                 if(pathFound) fastMarching.genPath(inix,iniy);
                 visited = fastMarching.visited;
                 //path = fastMarching.path;
                 break;
             }
-            else
-                fillCell(fastMarching.path[i]->i,fastMarching.path[i]->j);
+            else{
+                //fillCell(fastMarching.path[i]->i,fastMarching.path[i]->j);
+                GLfloat point[2];
+                glPointSize(5.0);
+                glLineWidth(2.5);
+                glColor3f(1.0, 1.0, 0.0);
+
+                glBegin(GL_POINTS);
+                    for (int i = 0; i < fastMarching.path.size(); i++){ 
+                        point[0]=fastMarching.path[i]->j+0.5;
+                        point[1]=(COLUMNS-1)-fastMarching.path[i]->i+0.5;
+                        glVertex2fv(&point[0]);
+                    }
+                glEnd();
+                glBegin(GL_LINE_STRIP);
+                    for (int i = 0; i < fastMarching.path.size(); i++){ 
+                        point[0]=fastMarching.path[i]->j+0.5;
+                        point[1]=(COLUMNS-1)-fastMarching.path[i]->i+0.5;
+                        glVertex2fv(&point[0]);
+                    }
+                glEnd();
+            }
 		}
 	//}
     
@@ -176,7 +200,7 @@ void mouse_motion(int x, int y)
         if((y/(screenHeight/COLUMNS)!=goalx || x/(screenHeight/COLUMNS)!=goaly) && (y/(screenHeight/COLUMNS)!=inix || x/(screenHeight/COLUMNS)!=iniy)){ 
             if(!fastMarching.m_grid.grid[y/(screenHeight/COLUMNS)][x/(screenHeight/COLUMNS)].obstacle){
                 fastMarching.m_grid.setObstacle(y/(screenHeight/COLUMNS),x/(screenHeight/COLUMNS));
-                fastMarching.setObstacle(y/(screenHeight/COLUMNS),x/(screenHeight/COLUMNS),2);
+                fastMarching.setObstacle(y/(screenHeight/COLUMNS),x/(screenHeight/COLUMNS),1);
                 obstacles.push_back(fastMarching.m_grid.grid[y/(screenHeight/COLUMNS)][x/(screenHeight/COLUMNS)]);
             }/*  */
         /*for(int i=0; i<fastMarching.m_grid.grid.size(); ++i){
