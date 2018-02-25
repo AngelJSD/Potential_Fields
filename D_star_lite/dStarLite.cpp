@@ -27,10 +27,15 @@ void cDstarLite::update(cCell* u, cCell* goal){
     vector<cCell*>::iterator it;
     if(u->i != goal->i || u->j != goal->j){
         float minrhs;
-        minrhs = u->neightbours[0]->g +1;
+        float cost=1;
+        minrhs = u->neightbours[0]->g +cost;
         for(int i=0; i<u->neightbours.size(); ++i){
-            if(u->neightbours[i]->g +1 <minrhs)
-                minrhs = u->neightbours[i]->g +1;
+            if(u->i - u->neightbours[i]->i != 0 && u->j - u->neightbours[i]->j != 0)
+                cost=1.4;
+            else
+                cost=1;
+            if(u->neightbours[i]->g +cost <minrhs)
+                minrhs = u->neightbours[i]->g +cost;
         }
         u->rhs=minrhs;
     }
@@ -39,6 +44,7 @@ void cDstarLite::update(cCell* u, cCell* goal){
         open.erase(it);
     }
     if(u->g != u->rhs){
+        
         calculateKey(u);
         open.push_back(u);
         visited.push_back(*u);
@@ -66,10 +72,12 @@ bool cDstarLite::run(int ini_i, int ini_j, int fin_i, int fin_j){
         }
         else{
             u->g=100000;
+            u->h = abs(u->i-ini_i)+abs(u->j-ini_j)+1;
             update(u, &m_grid.grid[fin_i][fin_j]);
         }
         for(int i=0; i<u->neightbours.size(); ++i){
             if(!u->neightbours[i]->obstacle){
+                u->neightbours[i]->h = abs(u->neightbours[i]->i-ini_i)+abs(u->neightbours[i]->j-ini_j)+1;
                 update(u->neightbours[i], &m_grid.grid[fin_i][fin_j]);
             }
         }
